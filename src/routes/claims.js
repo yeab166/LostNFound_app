@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const authenticate = require('../'); // authentication from the middleware 
+const { db } = require('../config/fireBase');
+const authenticate = require('../middleware/authMiddleware'); // authentication from the middleware 
 
 const { db } = require('../'); // for firebase 
 

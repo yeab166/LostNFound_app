@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { db } = require('../');
-const authenticate = require('../');
+const { db } = require('../config/fireBase');
+const authenticate = require('../middleware/authMiddleware');
 
 // Get user profile (GET)
 router.get('/', authenticate, async (req, res) => {
