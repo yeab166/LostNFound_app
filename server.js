@@ -3,7 +3,7 @@ const cors= require('cors');
 const dotenv= require('dotenv');
 
 dotenv.config();
-const authRouter= require('../LostFoundNode/src/routes/authRoutes');
+const authRouter= require('..../LostFoundNode/src/routes/authRoutes');
 
 const app= express();
 app.use(cors());
