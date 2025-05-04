@@ -16,11 +16,4 @@ const authenticate = async (req, res, next) => {
   }
 };
 
-const checkAdmin = (req, res, next) => {
-  if (!req.user || !req.user.admin) {
-    return res.status(403).json('Admin access required');
-  }
-  next();
-};
-
-module.exports = { authenticate, checkAdmin };
+module.exports = { authenticate};
