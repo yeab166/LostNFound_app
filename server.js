@@ -13,5 +13,5 @@ app.use('/api',authRouter);
 const PORT= process.env.PORT || 8080;
 
 app.listen(PORT, ()=>{
-  console.log(`The surver run on port ${PORT}`);
+  console.log(`The server run on port ${PORT}`);
 });
