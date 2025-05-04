@@ -3,12 +3,13 @@ const cors= require('cors');
 const dotenv= require('dotenv');
 
 dotenv.config();
-const authRouter= require('....LostFoundNode/src/routes/authRoutes');
+const authRoutes = require('./routes/authRoutes');
+
 
 const app= express();
 app.use(cors());
 app.use(express.json());
-app.use('/api',authRouter);
+app.use('/api',authRoutes);
 
 const PORT= process.env.PORT || 8080;
 
