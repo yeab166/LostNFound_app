@@ -14,7 +14,7 @@ const router = express.Router();
  };
  
  // GET /api/admin/claims - View pending claims
- router.get('/claims', authenticate, isAdmin, async (req, res) => {
+ router.get('/api/admin/claim', authenticate, isAdmin, async (req, res) => {
    try {
      const snapshot = await db.collection('claims')
        .where('status', '==', 'pending')
@@ -32,7 +32,7 @@ const router = express.Router();
  });
  
  // POST /api/admin/claims/:id/approve - Approve claim
- router.post('/claims/:id/approve', authenticate, isAdmin, async (req, res) => {
+ router.post('/api/admin/approve', authenticate, isAdmin, async (req, res) => {
    try {
      const claimId = req.params.id;
  
@@ -55,7 +55,7 @@ const router = express.Router();
  });
  
  // POST /api/admin/claims/:id/reject - Reject claim
- router.post('/claims/:id/reject', authenticate, isAdmin, async (req, res) => {
+ router.post('/api/admin/reject', authenticate, isAdmin, async (req, res) => {
    try {
      await db.collection('claims').doc(req.params.id).update({
        status: 'rejected',
