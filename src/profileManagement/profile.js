@@ -6,7 +6,7 @@ const {authenticate} = require('../middleware/authMiddleware');
  const db = admin.firestore();
 
  // Get user profile (GET)
- router.get('/', authenticate, async (req, res) => {
+ router.get('/api/profile/get', authenticate, async (req, res) => {
      try {
          const userDoc = await db.collection('users').doc(req.user.uid).get();
          if (!userDoc.exists) {
@@ -19,7 +19,7 @@ const {authenticate} = require('../middleware/authMiddleware');
  });
  
  // Update profile (put)
- router.put('/', authenticate, async (req, res) => {
+ router.put('/api/profile/update', authenticate, async (req, res) => {
    await db.collection('users').doc(req.user.uid).update(req.body);
    res.send('Profile updated');
  });
