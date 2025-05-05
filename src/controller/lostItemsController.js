@@ -77,3 +77,5 @@ exports.deleteLostItem = async (req, res) => {
     res.status(500).json({ error: 'Failed to delete item.' });
   }
 };
+
+module.exports= {addLostItem, getLostItems, updateLostItem, deleteLostItem};
