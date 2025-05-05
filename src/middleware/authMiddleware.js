@@ -1,6 +1,6 @@
 const admin = require('../config/fireBase');
 
-const authenticate = async (req, res, next) => {
+exports. authenticate = async (req, res, next) => {
   const token = req.headers.authorization?.split('Bearer ')[1];
 
   if (!token){
@@ -15,5 +15,3 @@ const authenticate = async (req, res, next) => {
     return res.status(401).json('Invalid Token');
   }
 };
-
-module.exports = {authenticate};
