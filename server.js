@@ -11,14 +11,6 @@ app.use(cors());
 app.use(express.json());
 app.use('/api',authRoutes);
 
-process.on('uncaughtException', err => {
-  console.error('Uncaught Exception:', err);
-});
-
-process.on('unhandledRejection', err => {
-  console.error('Unhandled Rejection:', err);
-});
-
 
 const PORT= process.env.PORT || 8080;
 
