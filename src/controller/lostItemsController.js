@@ -78,4 +78,3 @@ exports.deleteLostItem = async (req, res) => {
   }
 };
 
-module.exports= {addLostItem, getLostItems, updateLostItem, deleteLostItem};
