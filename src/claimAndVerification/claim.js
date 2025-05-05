@@ -6,7 +6,7 @@ const db = admin.firestore();
 const router = express.Router();
  
  // Claim a found item (POST)
- router.post('/', authenticate, async (req, res) => {
+ router.post('/api/claims', authenticate, async (req, res) => {
    try {
      const { itemId, message } = req.body;
      const userId = req.user.uid; // From JWT middleware
