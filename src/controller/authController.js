@@ -29,4 +29,3 @@ exports.getUser= async(req,res,next)=>{
   }
 }
 
-module.exports= {registerUser, loginUser, getUser};
