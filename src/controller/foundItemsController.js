@@ -92,4 +92,3 @@ exports.deleteFoundItem = async (req, res) => {
   }
 };
 
-module.exports= {addFoundItem, getFoundItems, updateFoundItem, deleteFoundItem};
