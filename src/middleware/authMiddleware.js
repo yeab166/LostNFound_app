@@ -1,9 +1,11 @@
 const admin = require('../config/fireBase');
 
-
-module.exports = async (req, res, next) => {
+exports. authenticate = async (req, res, next) => {
   const token = req.headers.authorization?.split('Bearer ')[1];
-  if (!token) return res.status(401).json('Unauthorized');
+
+  if (!token){
+    return res.status(401).json('Unauthorized');
+  } 
 
   try {
     const decodedToken = await admin.auth().verifyIdToken(token);
@@ -13,3 +15,4 @@ module.exports = async (req, res, next) => {
     return res.status(401).json('Invalid Token');
   }
 };
+
