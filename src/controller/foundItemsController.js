@@ -91,3 +91,5 @@ exports.deleteFoundItem = async (req, res) => {
     res.status(500).json({ error: 'Failed to delete item.' });
   }
 };
+
+module.exports= {addFoundItem, getFoundItems, updateFoundItem, deleteFoundItem};
