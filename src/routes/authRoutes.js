@@ -3,7 +3,7 @@ const multer = require('multer');
 
 
 const {registerUser, loginUser, getUser}= require('../controller/authController');
-const middleware= require('..//middleware/authMiddleware');
+const {authenticate} = require('../middleware/authMiddleware');
 const {addLostItem, getLostItems, updateLostItem, deleteLostItem}= require('../controller/lostItemsController');
 const {addFoundItem, getFoundItems, updateFoundItem, deleteFoundItem}= require('../controller/foundItemsController');
 const claimRouter= require('../claimAndVerification/claim');
@@ -15,13 +15,13 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 router.post('/register',registerUser);
 router.post('/login',loginUser);
-router.get('/user',middleware,getUser);
+router.get('/user',authenticate,getUser);
 router.post('/', upload.single('image'), addLostItem);
-router.get('/',middleware, getLostItems);
+router.get('/',authenticate, getLostItems);
 router.put('/:id', updateLostItem);
 router.delete('/:id', deleteLostItem);
 router.post('/', upload.single('image'), addFoundItem);
-router.get('/',middleware, getFoundItems);
+router.get('/',authenticate, getFoundItems);
 router.put('/:id', updateFoundItem);
 router.delete('/:id', deleteFoundItem);
 router.use('/api/claims', claimRouter);
