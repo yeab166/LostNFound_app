@@ -7,7 +7,7 @@
     "start": "node server",
     "dev": "nodemon server"
   },
-  "author": "",
+  "author": "Group 2",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
